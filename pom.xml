@@ -27,6 +27,14 @@
                 <groupId>com.epam.reportportal</groupId>
                 <artifactId>reportportal-maven-plugin</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>reportportal-integration</id>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
