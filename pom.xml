@@ -47,38 +47,38 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-                <configuration>
+<!--                <configuration>-->
 
-                    <!-- Uncomment it if you don't want your build to be failed in case of test errors -->
-                    <testFailureIgnore>true</testFailureIgnore>
+<!--                    &lt;!&ndash; Uncomment it if you don't want your build to be failed in case of test errors &ndash;&gt;-->
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
 
-                    <!-- For nested steps only -->
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                    <!---->
+<!--                    &lt;!&ndash; For nested steps only &ndash;&gt;-->
+<!--                    <argLine>-->
+<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
+<!--                    </argLine>-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
 
-                    <suiteXmlFiles>
-                        <!--<xmlFile>suites/issue27.xml</xmlFile>-->
-                        <!--<xmlFile>suites/randomizer_suite.xml</xmlFile>-->
-                        <xmlFile>suites/logging_tests.xml</xmlFile>
-                        <xmlFile>suites/nested_steps_tests.xml</xmlFile>
-                        <xmlFile>suites/callback_suite.xml</xmlFile>
-                    </suiteXmlFiles>
-                    <!-- ADD working directory to get TestNG know we to find suite files -->
-                    <workingDirectory>./</workingDirectory>
+<!--                    <suiteXmlFiles>-->
+<!--                        &lt;!&ndash;<xmlFile>suites/issue27.xml</xmlFile>&ndash;&gt;-->
+<!--                        &lt;!&ndash;<xmlFile>suites/randomizer_suite.xml</xmlFile>&ndash;&gt;-->
+<!--                        <xmlFile>suites/logging_tests.xml</xmlFile>-->
+<!--                        <xmlFile>suites/nested_steps_tests.xml</xmlFile>-->
+<!--                        <xmlFile>suites/callback_suite.xml</xmlFile>-->
+<!--                    </suiteXmlFiles>-->
+<!--                    &lt;!&ndash; ADD working directory to get TestNG know we to find suite files &ndash;&gt;-->
+<!--                    <workingDirectory>./</workingDirectory>-->
 
-                    <!--<properties>-->
-                    <!--<property>-->
-                    <!--<name>usedefaultlisteners</name>-->
-                    <!--<value>false</value>-->
-                    <!--</property>-->
-                    <!--<property>-->
-                    <!--<name>listener</name>-->
-                    <!--<value>com.epam.reportportal.testng.ReportPortalTestNGListener</value>-->
-                    <!--</property>-->
-                    <!--</properties>-->
-                </configuration>
+<!--                    &lt;!&ndash;<properties>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<property>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<name>usedefaultlisteners</name>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<value>false</value>&ndash;&gt;-->
+<!--                    &lt;!&ndash;</property>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<property>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<name>listener</name>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<value>com.epam.reportportal.testng.ReportPortalTestNGListener</value>&ndash;&gt;-->
+<!--                    &lt;!&ndash;</property>&ndash;&gt;-->
+<!--                    &lt;!&ndash;</properties>&ndash;&gt;-->
+<!--                </configuration>-->
                 <dependencies>
                     <!-- For nested steps only -->
                     <dependency>
