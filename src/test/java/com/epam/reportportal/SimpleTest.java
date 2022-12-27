@@ -1,4 +1,6 @@
-import org.testng.annotations.Test;
+package com.epam.reportportal;
+
+import org.junit.jupiter.api.Test;
 
 public class SimpleTest {
 

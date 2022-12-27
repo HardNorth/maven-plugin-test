@@ -16,19 +16,21 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
         <aspectj.version>1.9.2</aspectj.version>
+        <junit.version>5.6.3</junit.version>
+        <junit.runner.version>1.6.3</junit.runner.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.epam.reportportal</groupId>
-            <artifactId>reportportal-maven-plugin</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>com.epam.reportportal</groupId>
                 <artifactId>reportportal-maven-plugin</artifactId>
@@ -41,44 +43,24 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <rp.endpoint>http://docker.local:8080</rp.endpoint>
+                    <rp.api.key>12048844-d688-43f9-bb95-2865ea5c373f</rp.api.key>
+                    <rp.launch>JUnit 5</rp.launch>
+                    <rp.project>default_personal</rp.project>
+                    <rp.reporting.async>true</rp.reporting.async>
+                </configuration>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-<!--                <configuration>-->
-
-<!--                    &lt;!&ndash; Uncomment it if you don't want your build to be failed in case of test errors &ndash;&gt;-->
-<!--                    <testFailureIgnore>true</testFailureIgnore>-->
-
-<!--                    &lt;!&ndash; For nested steps only &ndash;&gt;-->
-<!--                    <argLine>-->
-<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
-<!--                    </argLine>-->
-<!--                    &lt;!&ndash;&ndash;&gt;-->
-
-<!--                    <suiteXmlFiles>-->
-<!--                        &lt;!&ndash;<xmlFile>suites/issue27.xml</xmlFile>&ndash;&gt;-->
-<!--                        &lt;!&ndash;<xmlFile>suites/randomizer_suite.xml</xmlFile>&ndash;&gt;-->
-<!--                        <xmlFile>suites/logging_tests.xml</xmlFile>-->
-<!--                        <xmlFile>suites/nested_steps_tests.xml</xmlFile>-->
-<!--                        <xmlFile>suites/callback_suite.xml</xmlFile>-->
-<!--                    </suiteXmlFiles>-->
-<!--                    &lt;!&ndash; ADD working directory to get TestNG know we to find suite files &ndash;&gt;-->
-<!--                    <workingDirectory>./</workingDirectory>-->
-
-<!--                    &lt;!&ndash;<properties>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<property>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<name>usedefaultlisteners</name>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<value>false</value>&ndash;&gt;-->
-<!--                    &lt;!&ndash;</property>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<property>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<name>listener</name>&ndash;&gt;-->
-<!--                    &lt;!&ndash;<value>com.epam.reportportal.testng.ReportPortalTestNGListener</value>&ndash;&gt;-->
-<!--                    &lt;!&ndash;</property>&ndash;&gt;-->
-<!--                    &lt;!&ndash;</properties>&ndash;&gt;-->
-<!--                </configuration>-->
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
                 <dependencies>
                     <!-- For nested steps only -->
                     <dependency>
